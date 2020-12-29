@@ -15,9 +15,12 @@ const Home = ({ results }) => {
   return (
     <div>
       <Header></Header>
-      <ul>
+      <ul className={styles.container}>
         {results.map((result) => (
-          <li key={result.id}>{result.title}</li>
+          <li key={result.id}>
+            {result.title}
+            <img src={IMAGEPATH + result.backdrop_path} alt={result.title} />
+          </li>
         ))}
       </ul>
     </div>
